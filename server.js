@@ -3,7 +3,7 @@ const dotenv = require ('dotenv').config();
 const app = express();
 
 const mongoose = require('mongoose');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 mongoose.connect(process.env.mongo_uri, (err) => {
     if (err) throw err;
     console.log('Successfully connected to MongoDB');
@@ -13,7 +13,7 @@ mongoose.connect(process.env.mongo_uri, (err) => {
 // console.log('app', app);
 
 app.use(express.json());// to parse json
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use('/api/user', require('./routes/userApi'));
 app.use('/api/transaction', require('./routes/transactionApi'));
