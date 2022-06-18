@@ -1,7 +1,7 @@
 const express = require('express')
 const dotenv = require ('dotenv').config();
 const app = express();
-
+const path = require('path');
 const mongoose = require('mongoose');
 // const morgan = require('morgan');
 mongoose.connect(process.env.mongo_uri, (err) => {
